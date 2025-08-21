@@ -43,7 +43,9 @@ const onboardingSchema = new mongoose.Schema(
     profileImage: { type: String },
     resume: { type: String },
     banner: {type: String},
-    skills: [{ type: String }]
+    skills: [{ type: String }],
+    careerGapStart:Date,
+    careerGapEnd:Date,
 
   },
   { timestamps: true }
