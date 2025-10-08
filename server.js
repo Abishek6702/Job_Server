@@ -125,6 +125,7 @@ app.use("/api/resumes", resumeRoutes);
 app.use("/api/templates", templateRoutes);
 app.use("/api/contact", contactRoute);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/templates/previews", express.static(path.join(__dirname, "templates", "previews")));
 
 // Start server after DB connection
 (async () => {

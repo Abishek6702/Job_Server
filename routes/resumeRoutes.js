@@ -1,13 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const controller = require('../controllers/resumeController');
+const resumeController = require("../controllers/resumeController");
 
-router.post('/', controller.createResume);
-router.get('/:id', controller.getResume);
-router.put('/:id', controller.updateResume);
-router.delete('/:id', controller.deleteResume);
-router.post('/render/:id', controller.renderResume); 
-router.get('/render-pdf/:id', controller.renderResumePDF);
+// POST Resume
+router.post("/", resumeController.postResume);
+
+// View Resume
+router.get("/preview", resumeController.previewResume);
+
+// Download Resume
+// router.get("/download/:templateId/:userId/:resumeId", resumeController.downloadResume);
+
+router.get("/download", resumeController.downloadResume);
 
 
 module.exports = router;
